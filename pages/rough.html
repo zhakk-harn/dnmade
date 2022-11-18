@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <svg width="1000" height="1000"></svg>
+    <script src="/libs/rough.4.5.2.js"></script>
+    <script>
+      const svg = document.querySelector("svg");
+
+      const rc = rough.svg(svg);
+      svg.appendChild(rc.circle(50, 50, 80, { fill: "red" })); // fill with red hachure
+      svg.appendChild(rc.rectangle(120, 15, 80, 80, { fill: "red" }));
+      svg.appendChild(
+        rc.circle(50, 150, 80, {
+          fill: "rgb(10,150,10)",
+          fillWeight: 3, // thicker lines for hachure
+        })
+      );
+      svg.appendChild(
+        rc.rectangle(220, 15, 80, 80, {
+          fill: "red",
+          hachureAngle: 60, // angle of hachure,
+          hachureGap: 8,
+        })
+      );
+      svg.appendChild(
+        rc.rectangle(120, 105, 80, 80, {
+          fill: "rgba(255,0,200,0.2)",
+          fillStyle: "solid", // solid fill
+        })
+      );
+    </script>
+  </body>
+</html>

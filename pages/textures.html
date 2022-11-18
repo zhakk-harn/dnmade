@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="/libs/d3.7.6.1.min.js"></script>
+    <script src="/libs/textures.1.2.0.js"></script>
+    <script>
+      var svg = d3.select("body").append("svg");
+
+      var t = textures.lines().thicker();
+
+      svg.call(t);
+
+      const circleNode = svg
+        .append("circle")
+        .attr("cx", 60)
+        .attr("cy", 60)
+        .attr("r", 60)
+        .attr("stroke", "black")
+        .style("fill", t.url());
+
+      console.log(circleNode);
+    </script>
+  </body>
+</html>
