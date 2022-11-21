@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="/libs/svg5.min.js"></script>
+    <script>
+      //https://github.com/MAKIO135/svg5.js
+
+      // Create an SVG drawing space
+      createSVG(500, 500);
+
+      // setting up
+      background("black");
+
+      // drawing
+      fill("white");
+      circle(50, 50, 35);
+
+      fill(120, 0, 0);
+      rect(170, 50, 20, 80);
+
+      const randomX = random(width);
+      fill(30, 120, 120);
+      circle(randomX, 250, 50);
+
+      strokeWidth(3);
+      fill(255, 255, 255);
+      for (let i = 0; i < 5; i = i + 1) {
+        ellipse(20 + i * 10, 400, 50, 100);
+      }
+
+      const maxSpacing = width / 5;
+      const spacing = random(maxSpacing);
+      for (let i = 0; i < 5; i = i + 1) {
+        ellipse(20 + i * spacing, 400, 50, 100);
+      }
+
+      // Finally, render the svg
+      render();
+    </script>
+  </body>
+</html>

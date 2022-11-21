@@ -20,13 +20,14 @@ render();
 
 You can quickly use the functions for primitive shapes shown here : https://github.com/MAKIO135/svg5.js#shapes
 
-
 ```js
 circle(62, 47, 50);
 ```
+
 ![](readme_resources/shape.PNG)
 
 ## with a different color
+
 ```js
 // you can use the CSS names of the colors
 //https://www.w3schools.com/cssref/css_colors.php
@@ -35,22 +36,27 @@ circle(62, 47, 50);
 
 // you can also specify an hexadecimal coded color
 fill("#191977");
-circle(132,47, 40);
+circle(132, 47, 40);
 
 // or you can specify 3 numbers in between 0 and 255
 // first one is the red, then green, then blue (RGB)
 fill(150, 0, 150);
-circle(192,47, 30);
+circle(192, 47, 30);
 ```
+
 ![](readme_resources/fill.PNG)
 
 ## with a different border (this also affects the lines)
+
 To change the colors of the borders and the lines it's exactly the same as with the fill, except you need to use the `stroke()` function
+
 ```js
-stroke(255,0,0);
+stroke(255, 0, 0);
 circle(63, 47, 50);
 ```
+
 ![](readme_resources/stroke.PNG)
+
 # How to draw many things at once
 
 ```js
@@ -66,6 +72,7 @@ for (let i = 0; i < 5; i = i + 1) {
   // then finaly i = 4
 }
 ```
+
 ![](readme_resources/for.PNG)
 
 ![](readme_resources/loop_explanation.png)
@@ -74,7 +81,7 @@ for (let i = 0; i < 5; i = i + 1) {
 
 ```js
 // first we generate a number between 0 and 100 and then call it "chance"
-const chance = random(0,100);
+const chance = random(0, 100);
 
 // if the chance is below 75, then we do what's inside
 if (chance < 75) {
@@ -83,9 +90,44 @@ if (chance < 75) {
 ```
 
 # How to draw something differently each time
-TODO 
+
+```js
+// you can also use the random() function to let it drive parts of your graphics
+
+const red = random(0, 255);
+const blue = random(0, 255);
+const green = random(0, 255);
+fill(red, green, blue);
+
+const rectWidth = random(20, 100);
+const rectHeight = random(20, 100);
+const rectX = random(0, 400);
+const rectY = random(0, 400);
+rect(rectX, rectY, rectWidth, rectHeight);
+```
+
+<details><summary><b>Bonus</b>: lots of them!</summary>
+<pre><code>
+//just put it in a for loop
+
+for(let i=0; i < 10; i = i + 1){
+  const red = random(0, 255);
+  const blue = random(0, 255);
+  const green = random(0, 255);
+  fill(red, green, blue);
+
+  const rectWidth = random(20, 100);
+  const rectHeight = random(20, 100);
+  const rectX = random(0, 400);
+  const rectY = random(0, 400);
+  rect(rectX, rectY, rectWidth, rectHeight);
+}
+</code></pre>
+
+</details>
 
 # Custom shapes
+
 https://github.com/MAKIO135/svg5.js#vertex-shapes
 
 ## "Open"
@@ -114,10 +156,11 @@ endShape(CLOSE);
 
 ![](readme_resources/closed_shape.PNG)
 
-
-
 # Try to reproduce these
+### It dosen't have to be pixel-perfect replicas
+
 ## Exercise 1
+
 ![](readme_resources/1.PNG)
 
 <details><summary>Answer</summary>
@@ -142,7 +185,7 @@ render();
 
 <details><summary>Answer</summary>
 <pre><code>
-createSVG(500, 500);  
+createSVG(500, 500);
 
 fill("rebeccaPurple")
 beginShape();
@@ -158,6 +201,7 @@ render();
 </code></pre>
 
 you can also use the <code>polygon()</code> function
+
 <pre><code>
 createSVG(500, 500);
 
@@ -169,6 +213,7 @@ render();
 </details>
 
 ## Exercise 3
+
 <details><summary>Hint</summary>
 All you need are the <code>line()</code> and <code>stroke()</code> functions and a <code>for</code> loop
 </details>
@@ -177,11 +222,11 @@ All you need are the <code>line()</code> and <code>stroke()</code> functions and
 
 <details><summary>Answer</summary>
 <pre><code>
-createSVG(500, 500);  
+createSVG(500, 500);
 
 for (i = 0; i < 255; i++) {
-    stroke(0, 255, 255 - i);
-    line(120 + i, 200, 120 + i, 300);
+stroke(0, 255, 255 - i);
+line(120 + i, 200, 120 + i, 300);
 }
 
 render();
